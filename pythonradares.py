@@ -2,6 +2,8 @@ from lxml import etree
 doc = etree.parse('radares.xml')
 
 from funciones import provincias
+from funciones import radares
+from funciones import poblacion
 
 while (True):
     print('''
@@ -39,7 +41,7 @@ while (True):
             print (carreteras)
         print ("")
         print ("Tiene un total de",poblacion(provincia,doc)[1],"radares")
-        
+
     elif opcion == 0:
         break;
     else:
