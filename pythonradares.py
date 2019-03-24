@@ -68,7 +68,7 @@ while (True):
         for latitud,longitud in zip(localizar(carretera,doc)[1],localizar(carretera,doc)[2]):
             print(cantidad,"-","http://www.openstreetmap.org/#map=20/%s/%s"%(latitud,longitud))
             cantidad = cantidad + 1
-            
+
     elif opcion == 0:
         break;
     else:
