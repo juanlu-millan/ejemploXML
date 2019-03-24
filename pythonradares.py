@@ -1,9 +1,9 @@
 from lxml import etree
 doc = etree.parse('radares.xml')
 
-from funciones import provincias
-from funciones import radares
-from funciones import poblacion
+from funcionesxml import provincias
+from funcionesxml import radares
+from funcionesxml import poblacion
 
 while (True):
     print('''
