@@ -5,6 +5,8 @@ from funcionesxml import provincias
 from funcionesxml import radares
 from funcionesxml import poblacion
 from funcionesxml import carreteras
+from funcionesxml import localizar
+
 
 while (True):
     print('''
@@ -56,7 +58,17 @@ while (True):
         print ("..........................................")
         for radaresinicio,radaresfinal in zip(carreteras(carretera,doc)[1],carreteras(carretera,doc)[2]):
             print (radaresinicio,"-",radaresfinal)
+    elif opcion==5:
+    #Pedir por teclado una carretera, cuenta los radares que tiene y muestra las coordenadas de los radares.(Se puede obtener la URL de OpenStraeetMap para ver donde está el radar).
 
+        carretera=input("Dime una carretera:")
+        print ("La carretera de",carretera,"tiene",localizar(carretera,doc)[0],"radares")
+
+        cantidad = 1
+        for latitud,longitud in zip(localizar(carretera,doc)[1],localizar(carretera,doc)[2]):
+            print(cantidad,"-","http://www.openstreetmap.org/#map=20/%s/%s"%(latitud,longitud))
+            cantidad = cantidad + 1
+            
     elif opcion == 0:
         break;
     else:
