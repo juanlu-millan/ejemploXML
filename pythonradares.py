@@ -4,6 +4,7 @@ doc = etree.parse('radares.xml')
 from funcionesxml import provincias
 from funcionesxml import radares
 from funcionesxml import poblacion
+from funciones import carreteras
 
 while (True):
     print('''
