@@ -22,6 +22,12 @@ while (True):
             print ("______________")
             print (i)
 
+
+    elif opcion==2:
+
+    #Mostrar la cantidad de radares de los que tenemos información.
+         print ("Hay un total de ",int(radares(doc)),"radares")
+
     elif opcion == 0:
         break;
     else:
