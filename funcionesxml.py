@@ -17,3 +17,12 @@ def poblacion(provincia,doc):
     radares = int(doc.xpath('count(//PROVINCIA[NOMBRE="%s"]/./CARRETERA/RADAR)'%provincia))
     info = [carretera,radares]
     return info
+
+    #Pedir por teclado una carretera, muestra las provincias por la que pasa y sus respectivos radares.
+
+def carreteras(carretera,doc):
+    provincias = doc.xpath('//CARRETERA[DENOMINACION="%s"]/../NOMBRE/text()'%carretera)
+    radaresini = doc.xpath('//CARRETERA[DENOMINACION="%s"]/RADAR/PUNTO_INICIAL/PK/text()'%carretera)
+    radaresfin = doc.xpath('//CARRETERA[DENOMINACION="%s"]/RADAR/PUNTO_FINAL/PK/text()'%carretera)
+    info = [provincias,radaresini,radaresfin]
+    return info
