@@ -42,6 +42,20 @@ while (True):
         print ("")
         print ("Tiene un total de",poblacion(provincia,doc)[1],"radares")
 
+    elif opcion==4:
+    #Pedir por teclado una carretera, muestra las provincias por la que pasa y sus respectivos radares.
+        carretera=input("Dime una carretera:")
+
+        print ("Provincia/s de la carretera",carretera)
+        print ("..........................................")
+        for información in carreteras(carretera,doc)[0]:
+            print ("-",información)
+        print ("")
+        print ("Radares de la carretera",carretera)
+        print ("..........................................")
+        for radaresinicio,radaresfinal in zip(carreteras(carretera,doc)[1],carreteras(carretera,doc)[2]):
+            print (radaresinicio,"-",radaresfinal)
+
     elif opcion == 0:
         break;
     else:
