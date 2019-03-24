@@ -28,6 +28,18 @@ while (True):
     #Mostrar la cantidad de radares de los que tenemos información.
          print ("Hay un total de ",int(radares(doc)),"radares")
 
+    elif opcion==3:
+
+    #Pedir por teclado una provincia y mostrar el nombre de las carreteras que tiene y la cantidad de radares.
+        provincia=input("Dime una provincia:").capitalize()
+
+        print ("Carreteras de la provincia de",provincia)
+        print ("..........................................")
+        for carreteras in poblacion(provincia,doc)[0]:
+            print (carreteras)
+        print ("")
+        print ("Tiene un total de",poblacion(provincia,doc)[1],"radares")
+        
     elif opcion == 0:
         break;
     else:
