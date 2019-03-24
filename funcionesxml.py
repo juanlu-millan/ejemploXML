@@ -26,3 +26,12 @@ def carreteras(carretera,doc):
     radaresfin = doc.xpath('//CARRETERA[DENOMINACION="%s"]/RADAR/PUNTO_FINAL/PK/text()'%carretera)
     info = [provincias,radaresini,radaresfin]
     return info
+
+    #Pedir por teclado una carretera, cuenta los radares que tiene y muestra las coordenadas de los radares.(Se puede obtener la URL de OpenStraeetMap para ver donde está el radar).
+
+def localizar(carretera,doc):
+    cuentaradares = int(doc.xpath('count(//CARRETERA[DENOMINACION="%s"]/RADAR)'%carretera))
+    latitud = doc.xpath('//CARRETERA[DENOMINACION="%s"]/RADAR/PUNTO_INICIAL/LATITUD/text()'%carretera)
+    longitud = doc.xpath('//CARRETERA[DENOMINACION="%s"]/RADAR/PUNTO_INICIAL/LONGITUD/text()'%carretera)
+    info = [cuentaradares,latitud,longitud]
+    return info
