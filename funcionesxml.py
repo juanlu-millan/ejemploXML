@@ -18,6 +18,7 @@ def poblacion(provincia,doc):
     info = [carretera,radares]
     return info
 
+
     #Pedir por teclado una carretera, muestra las provincias por la que pasa y sus respectivos radares.
 
 def carreteras(carretera,doc):
